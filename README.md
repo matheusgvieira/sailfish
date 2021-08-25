@@ -1,4 +1,6 @@
-![Sailfish](images/logo.svg)
+<p align="center">
+    <img src="images/logo.svg" />
+</p>
 
 > Develop an embedded system that by capturing audio and using a Google Assistant API to identify and interpret the incoming audio content in order to control by voice the temperature of a pool.
 
