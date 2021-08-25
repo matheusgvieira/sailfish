@@ -5,7 +5,7 @@
 > Develop an embedded system that by capturing audio and using a Google Assistant API to identify and interpret the incoming audio content in order to control by voice the temperature of a pool.
 
 ## Requirements
-* Capture audio with a microphone and use the Raspberry Pi's internal hardware.
+* Capture audio with a microphone and use the Raspberry Pi internal hardware.
 * Develop software layer capable of connecting Google Assistant API with microprocessor.
 * Define and configure key phrases for pool temperature control.
 * Develop pool PID control system.
