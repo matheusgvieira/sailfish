@@ -82,6 +82,15 @@ int RGBRed(int value)
 	return 0;
 }
 
+void RGBOff()
+{
+	RGBGreen(0);
+	RGBRed(0);
+	RGBBlue(0);
+}
+
+
+
 int GPIOread(int pin)
 {
 	char str[100];

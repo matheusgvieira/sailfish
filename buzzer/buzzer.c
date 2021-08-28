@@ -51,7 +51,7 @@ int BuzzerState(int value)
 	if((value!=0)&&(value!=1))
 		return -1;
 	char str[100], val[2];
-	sprintf(str, GPIO_PATH "/gpio%d/value", pin);
+	sprintf(str, GPIO_PATH "/gpio%d/value", pinBuzzer);
 	sprintf(val, "%d", value);
 	if(write_to_file(str, val)<0)
 		return -2;

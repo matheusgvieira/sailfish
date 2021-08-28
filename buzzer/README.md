@@ -18,3 +18,8 @@ gpio -g write 26 0
 
 ```
 ## Library
+Functions from buzzer.h
+
+```c
+int BuzzerState(int value);    // toggle buzzer
+```

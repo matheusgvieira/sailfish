@@ -7,7 +7,7 @@
 
 #define GPIO_PATH "/sys/class/gpio"
 
-const int pin = 26;
+#define pinBuzzer 26
 
 int write_to_file(char *file_name, char *content);
 int read_from_file(char *file_name, char *content, int N);
