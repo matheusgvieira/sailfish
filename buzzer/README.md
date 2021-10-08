@@ -1,4 +1,4 @@
-# Sinalization LEDs
+# Sinalization Buzzer
 
 ## Circuit Layout
 ![rgb](../images/buzzer.png)
