@@ -40,3 +40,12 @@ int RGBBlue(int value);     // Light on blue
 int RGBRed(int value);      // Light on green
 void RGBOff();              // Power off all leds
 ```
+
+## Test
+
+```sh
+./rgb.out red
+./rgb.out blue
+./rgb.out green
+./rgb.out off
+```
