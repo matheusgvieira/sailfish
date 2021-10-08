@@ -20,6 +20,11 @@ cd 28-*
 cat w1_slave
 ```
 
+Pegue o ID do sensor na RPi
+```sh
+ ls /sys/bus/w1/devices/ | grep 28
+ > 28-021313d1b8aa
+```
 ## Teste
 
 In C/C++
