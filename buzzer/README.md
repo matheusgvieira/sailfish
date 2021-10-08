@@ -23,3 +23,11 @@ Functions from buzzer.h
 ```c
 int BuzzerState(int value);    // toggle buzzer
 ```
+
+## Teste
+
+```sh
+make
+./buzzer.out 1 # Ligar
+./buzzer.out 0 # Desligar
+```
