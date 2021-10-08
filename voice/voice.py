@@ -26,6 +26,9 @@ while True:
 
         if words == "sinal":
             os.system('../buzzer/./buzzer.out 1')
+        
+        if words == "temperatura":
+            os.system('../voice_temperature/./sensor.out')
 
         if words == "desligar sinal":
             os.system('../buzzer/./buzzer.out 0')
