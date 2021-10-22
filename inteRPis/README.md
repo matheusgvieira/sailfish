@@ -19,7 +19,7 @@ python3 get_temp.py
 
 3. Insert temperature values in database:
 ```shell
-python3 insert_temp.py VALUE_TEMPERATURE
-# Example: python3 insert_temp.py 25.4
+python3 insert_temp.py VALUE_TEMPERATURE STATE_HEATER
+# Example: python3 insert_temp.py 25.4 1
 ```
 
