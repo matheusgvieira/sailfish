@@ -10,7 +10,7 @@ After the circuit assembled, the initial test of the GPIos, to check the connect
 ### GPIOs
 
 ```sh
-# Test GPIO 17 => Green
+# Test GPIO 17 => LED Green
 echo "17" > /sys/class/gpio/export
 chmod -R 777 /sys/class/gpio/gpio17
 echo "out" > /sys/class/gpio/gpio17/direction
@@ -19,12 +19,12 @@ echo "0" > /sys/class/gpio/gpio17/value
 
 # Other tests with GPIO Library
 
-# Blue
+# LED Blue
 gpio export 22 out
 gpio -g write 22 1
 gpio -g write 22 0
 
-# Red
+# LED Red
 gpio export 6 out
 gpio -g write 6 1
 gpio -g write 6 0
