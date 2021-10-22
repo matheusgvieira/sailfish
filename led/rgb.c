@@ -4,8 +4,8 @@ int setGPIOdirection(int pin, char *direction)
 {
 	if((strcmp(direction, "out")!=0)&&(strcmp(direction, "in")!=0))
 		return -1;
-	int valid_pins[17]={0, 1, 4, 7, 8, 9, 10, 11, 14, 15, 17, 18, 21, 22, 23, 24, 25};
-	for(int c=0;c<17;c++)
+	int valid_pins[18]={0, 1, 4, 6, 7, 8, 9, 10, 11, 14, 15, 17, 18, 21, 22, 23, 24, 25};
+	for(int c=0;c<18;c++)
 	{
 		if(pin == valid_pins[c])
 		{
