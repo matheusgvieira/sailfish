@@ -2,11 +2,12 @@ import speech_recognition as sr
 from datetime import date
 from time import sleep
 import os
+import get_temp
 
 r = sr.Recognizer()
 mic = sr.Microphone()
 
-print("########### Ouvindo ################")
+print("############## Ouvindo ################")
 
 while True:
     with mic as source:
@@ -28,22 +29,26 @@ while True:
             os.system('../buzzer/./buzzer.out 1')
         
         if words == "temperatura":
-            os.system('../voice_temperature/./sensor.out')
+            print(get_temp.get_pos_element(-1, 'data'))
+            # os.system('../voice_temperature/./sensor.out')
 
+        if words == "aquecedor":
+            print(get_temp.get_pos_element(-1, 'state'))
+        
         if words == "desligar sinal":
             os.system('../buzzer/./buzzer.out 0')
 
         if words == "Desligar luz":
             os.system('../led/./rgb.out off')
 
-        if words == "exit":
+        if words == "sair":
             print("...")
             sleep(1)
             print("...")
             sleep(1)
             print("...")
             sleep(1)
-            print("Goodbye")
+            print("Finalizando")
             break
     except:
         print("Não entendi")
