@@ -15,6 +15,6 @@ int main(){
     Sensor *sensor = GetSensor(locale, DEFAULTSENSORNAME);
 
     temp = ReadTemperature(sensor);
-    printf("Temperatura = %.2f \n", temp);
+    printf("%.2f\n", temp);
     return 0;
 }
