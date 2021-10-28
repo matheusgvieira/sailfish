@@ -22,11 +22,6 @@ void MQTTPub(const char *topic, const void *payload, int qos)
 
 {
 	mosquitto_publish(mosq, NULL, topic, strlen(payload), payload, qos, false);
-
-	mosquitto_disconnect(mosq);
-	mosquitto_destroy(mosq);
-
-	mosquitto_lib_cleanup();
 }
 
 void delay(int milliseconds)
@@ -40,38 +35,35 @@ void delay(int milliseconds)
 		now = clock();
 }
 
-char *pinmonitor(int pin[3])
+char pinmonitor(int pin)
 { // red, blue, green, buzzer
-	char filegpio[10], num[10];
-	char values[10], ch;
-	strcat(values, "[");
+	char filegpio[100], num[10];
+	char val;
+	strcpy(filegpio, PATHGPIO);
+	sprintf(num, "%d", pin);
+	strcat(filegpio, num);
+	strcat(filegpio, "/value");
 
-	for (int j = 0; j < 4; j++)
+	FILE *filePointer = NULL;
+
+	int thisCharacter;
+
+	filePointer = fopen(filegpio, "r");
+
+	if (!filePointer)
 	{
-		strcat(filegpio, PATHGPIO);
-		sprintf(num, "%d", pin[j]);
-		strcat(filegpio, num);
-		strcat(filegpio, "/value");
-
-		FILE *fp;
-
-		fp = fopen(filegpio, "r"); // read mode
-
-		if (fp == NULL)
-		{
-			perror("Error while opening the file.\n");
-			exit(EXIT_FAILURE);
-		}
-
-		while ((ch = fgetc(fp)) != EOF)
-			strcat(values, ch);
-		if (j < 3) strcat(values, ", ");
-
-		for (int i = 0; i < 10; i++){
-			filegpio[i] = "";
-		} 
+		printf("Erro na abertura do arquivo");
+		exit(-1);
 	}
-	strcat(values, "]");
 
-	return values;
+	while ((thisCharacter = fgetc(filePointer)) != EOF)
+	{
+		val = thisCharacter;
+		break;
+	}
+
+	fclose(filePointer);
+	filePointer = NULL;
+
+	return val;
 }
