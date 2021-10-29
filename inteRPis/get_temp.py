@@ -13,6 +13,7 @@ def get_pos_value(pos):
     return data['data'][pos]
 
 def get_pos_element(pos, element):
+    data = supabase.table("Temp").select("*").execute()
     line =  data['data'][pos]
     return line[element]
 

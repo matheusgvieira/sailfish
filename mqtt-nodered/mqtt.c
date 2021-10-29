@@ -67,3 +67,23 @@ char pinmonitor(int pin)
 
 	return val;
 }
+
+char *get_temp()
+{	
+	float num;
+	char *numstr = malloc(2 * sizeof(char));
+	FILE *fptr;
+
+	if ((fptr = fopen("/home/pi/sailfish/mqtt-nodered/temperature.txt", "r")) == NULL)
+	{
+		printf("Error! opening file");
+		exit(1);
+	}
+
+	fscanf(fptr, "%f", &num);
+	sprintf(numstr, "%.2f", num);
+
+	fclose(fptr);
+
+	return numstr;
+}

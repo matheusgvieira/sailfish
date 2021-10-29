@@ -17,5 +17,6 @@ void MQTTConnect(const char *id, const char *host, int port, int keepalive, cons
 void MQTTPub(const char *topic, const void *payload, int qos);
 void delay(int milliseconds);
 char pinmonitor(int pin);
+char *get_temp();
 
 #endif //_MQTT_H_
