@@ -44,8 +44,8 @@ void RGBOff();              // Power off all leds
 ## Test
 
 ```sh
-./rgb.out red
-./rgb.out blue
-./rgb.out green
-./rgb.out off
+./rgb.out 1 # red
+./rgb.out 2 # azul
+./rgb.out 3 # green
+./rgb.out # desligar todos
 ```
